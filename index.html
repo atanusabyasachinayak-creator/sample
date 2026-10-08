@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  
+    <div class="Counter_container">
+    <div class="Display_container">0</div>
+    <button id="Add" class="button">+</button>
+    <button id="Sub" class="button">-</button>
+  </div>
+
+  
+  <div class="blub_container">
+    <img class="Image" src="folder/bulb-off-icon-25986.png" alt="">
+    <div>
+      <button id="On">on</button>
+      <button id="Of">Off</button>
+    </div>
+  </div>
+  
+
+  <div  class="Add_user_container">
+    <button id="add_user_button"> +Add User</button>
+  </div>
+
+
+
+
+  
+  
+  <script>
+  
+   let add = document.querySelector('#Add')   
+   let sub = document.querySelector('#Sub')
+   let  count  = Number(localStorage.getItem("count")) || 0;
+
+   function Display_container(){
+    document.querySelector('.Display_container').innerText =count
+   }
+   // Show saved count when page loads
+    Display_container();
+
+
+   // click functionality used in Add button
+   add.addEventListener('click', Addfun )
+   function Addfun(){
+    count = count +1  
+    localStorage.setItem("count" , count)
+    Display_container()
+   }
+
+
+ // As same as the sub Button 
+  sub.addEventListener('click' , Subfun)
+  function Subfun(){
+    count = count -1
+    localStorage.setItem("count" , count)
+    Display_container()
+  }
+
+  let Add_user = document.querySelector('#add_user_button')
+  Add_user.addEventListener('click', function (){
+    document.body.innerHTML+= `
+<form action="" method="post" id ="form_container" onsubmit = "return Test_case1()">
+<input type="text" placeholder="Enter the name " id = "A">
+<input type="password" placeholder=" Enter the password" id = "B" >
+<input type="password" placeholder="Conform password" id = "C">
+<div class = "radio"><label for="">Male </label> <input type="radio" name="Gender" value="Male">
+<label for="">Female</label><input type="radio" name="Gender" value="Female"></div>
+
+<div class = "checkbox">
+<label for="">JavaScript </label>
+<input type="checkbox" name="Language">
+<label for="">Python  </label>
+<input type="checkbox" name="Language">
+<label for="">SQL</label>
+<input type="checkbox" name="Language">
+<label for="">AI</label>
+<input type="checkbox" name="Language">
+</div>
+
+<div class = "Select">
+<label for="">City</label>
+<select name="" id="city">
+  <option value="">select</option>
+  <option value="">Hyderabad</option>
+  <option value="">Bhubaneswer</option>
+  <option value="">Bangalur</option>
+  <option value="">Mumbai</option>
+</select>
+
+<label for="">State</label>
+<select name="" id="state">
+  <option value="">Select</option>
+  <option value="">TG</option>
+  <option value="">OD</option>
+  <option value="">KA</option>
+  <option value="">MH</option>
+</select>
+
+<label for="">Country</label>
+<select name="" id="Country">
+<option value="">Select</option>
+<option value="">India</option>
+<option value="">USA</option>
+<option value="">Rasia</option>
+<option value="">China</option>
+</select>
+
+</div>
+<input type="submit">
+<input type="reset">
+</form>
+`
+
+  })
+
+
+  function Test_case1(){
+  let username = document.querySelector('#A').value 
+  let password = document.querySelector('#B').value
+  let Conform_password = document.querySelector('#C').value
+  let gender = document.getElementsByName('Gender')
+  let Language = document.getElementsByName('Language')
+
+
+  let city = document.querySelector('#city')
+  let state = document.querySelector('#state')
+  let Country = document.querySelector('#Country')
+
+  
+  if(username =="" ||username == null){
+    window.alert('Please Enter your username')
+    return false
+  }
+  else if(password == "" || password == null){
+    window.alert('please enter your password')
+    return false
+
+  }
+  else if(password != Conform_password ){
+    window.alert("password and conform password must be same")
+    return false
+  }
+  // Redio  Button Validation
+  else if (gender[0].checked == false && gender[1].checked == false){
+    window.alert("Please enter your gender")
+    return false
+  }
+  // Check Box validation 
+  else if(Language[0].checked == false && Language[1].checked == false && Language[2].checked == false && Language[3].checked == false){
+    window.alert("Dear.. User  PLease Enter any One language")
+    return false
+  }
+  // select tag validation 
+  else if(city.selectedIndex == ""){
+    window.alert("Dear user.. Please Enter the city")
+    return false
+  }
+  else if (state.selectedIndex == ""){
+    window.alert("Dear user... Please Enter the state")
+    return false
+  
+  }
+  else if (Country.selectedIndex == ""){
+    window.alert("Dear user .... Please Enter the country")
+    return false
+  }
+
+
+
+  return true
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+// let container = document.createElement("div");
+
+// container.innerHTML = `
+//     <h2>Employee Details</h2>
+
+
+
+
+
+
+let On = document.querySelector('#On')
+let Of = document.querySelector('#Of')
+On.addEventListener('click' , function(){
+  document.querySelector('.Image').src = "folder/WhatsApp Image 2026-10-01 at 4.21.18 PM.jpeg"
+  document.body.style.backgroundColor = "black";
+})
+Of.addEventListener('click', function(){
+  document.querySelector('.Image').src ="folder/bulb-off-icon-25986.png"
+   document.body.style.backgroundColor = "white";
+})
+    
+  </script>
+
+  
+</body>
+</html>

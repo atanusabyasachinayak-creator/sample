@@ -1,0 +1,118 @@
+body{
+display: flex;
+  text-align: center;
+
+}
+.Counter_container{
+  
+  margin-top: 300px;
+  background-color: aliceblue;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+
+}
+.Display_container{
+ display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+  
+
+   padding: 10px;
+    margin: 10px;
+    background-color: #f3f3ca;
+}
+
+.button{
+      padding: 4px;
+    width: 63px;
+    height: 44px;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+
+/* ============================================================================================= */
+#add_user_button{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* ==========================================================================================  */
+
+.blub_container{
+  display: flex;
+  flex-direction: column;
+}
+
+.Image{
+     width: 200px;
+    height: 250px;
+    object-fit: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Add_user_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+}
+
+ #form_container{
+    margin: 10px;
+    width: 500px;
+    display: flex;
+    justify-content:  center;
+    flex-direction: column;
+    padding: 10px;
+    border: 5px solid black;
+    
+  
+   }
+   input{
+     margin: 10px;
+    width: 224px;
+    padding: 9px
+   }
+
+
+.radio{
+  display: flex;
+    align-items: center;
+    width: 250px;
+    padding: 10px;
+}
+.checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Select{
+      display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+select{
+  width: 100px;
+    height: 27px;
+}
